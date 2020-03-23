@@ -7,7 +7,24 @@ Example :
 	"tact coa"->true(permutations : "tacocat", "atcocta", etc.)
 */
 
-bool isPermutationOfPallindrome1( string& str )
+#include<bitset>
+using namespace std;
+
+bool isPermutationOfPallindrome1( string str )
 {
-  
+     bitset<128> alpha;
+     int count = 0;
+     for(char c : str)
+     {
+	 if(0<=c&&c<128&&c!=' ')
+	 {
+	 	count++;
+	 	alpha.flip(c);
+	 }
+     }
+     if(count%2==0&&alpha.count()==0) return true;
+     else if (count%2!=0&&alpha.count()==1)
+     	return true;
+     else
+     	return false; 
 }
