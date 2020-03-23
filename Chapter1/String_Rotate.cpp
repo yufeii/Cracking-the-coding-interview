@@ -6,3 +6,8 @@ only one call to isSubstring().
 Example:
 stringRotation("waterbottle", "erbottlewat")
 */
+
+bool stringRotation(string &s1, string& s2) {
+   string s3 = s1+s1;
+   return s3.find(s2) != string::npos;
+}
